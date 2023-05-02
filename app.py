@@ -3,7 +3,7 @@ import requests
 import os
 import openai
 app = Flask(__name__)
-
+openai.api_key = os.environ.get("YOUR_API_KEY")
 @app.route('/gpt', methods=['POST'])
 def gpt():
     prompt = request.json.get('prompt')
