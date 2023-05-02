@@ -3,10 +3,9 @@ import requests
 import os
 import openai
 app = Flask(__name__)
-
+openai.api_key = os.environ.get("YOUR_API_KEY")
 @app.route('/gpt', methods=['POST'])
 def call_openai_api():
-    openai.api_key = os.environ.get("YOUR_API_KEY")
     prompt = request.form.get('prompt')
     model = request.form.get('model', 'text-davinci-002')
     max_tokens = int(request.form.get('maxTokens', 16))
