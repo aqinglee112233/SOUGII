@@ -3,7 +3,7 @@ import requests
 import os
 import openai
 app = Flask(__name__)
-openai.api_key = os.environ.get("YOUR_API_KEY")
+
 @app.route('/gpt', methods=['POST'])
 def gpt():
     prompt = request.json.get('prompt')
@@ -12,17 +12,17 @@ def gpt():
     temperature = float(request.json.get('temperature', 0.7))
     data = {
         'prompt': prompt,
-        'engine': model ,
+        'engine': model,
         'max_tokens': max_tokens,
         'temperature': temperature
-          }
+    }
     response = openai.Completion.create(
         engine=model,
         prompt=prompt,
         max_tokens=max_tokens,
-        temperature = temperature
+        temperature=temperature
     )
-    print(response.status_code)
+    #print(type(response))
     return response
 
 if __name__ == '__main__':
