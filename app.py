@@ -13,7 +13,7 @@ def call_openai_api():
 
     headers = {
         'Content-Type': 'application/json',
-        'Authorization': "Bearerport  " + openai.api_key
+        'Authorization': "Api-key  " + openai.api_key
     }
     data = {
         "prompt": prompt,
