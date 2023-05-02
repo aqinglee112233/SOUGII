@@ -10,7 +10,7 @@ def call_openai_api():
     model = request.form.get('model', 'text-davinci-002')
     max_tokens = int(request.form.get('maxTokens', 16))
     temperature = float(request.form.get('temperature', 0.7))
-
+ 
     headers = {
         'Content-Type': 'application/json',
         'Authorization': "Api-key  " + openai.api_key
