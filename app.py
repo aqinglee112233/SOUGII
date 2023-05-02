@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 import requests
 import os
+import openai
 app = Flask(__name__)
 
 @app.route('/gpt', methods=['POST'])
