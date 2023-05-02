@@ -21,7 +21,7 @@ def call_openai_api():
         "max_tokens": max_tokens,
         "temperature": temperature
     }
-
+    print(headers,data )
     response = requests.post('https://api.openai.com/v1/engines/davinci-codex/completions', headers=headers, json=data)
 
     if response.status_code == 200:
